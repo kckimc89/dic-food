@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><meta content="yes" name="apple-mobile-web-app-capable"/><meta content="default" name="apple-mobile-web-app-status-bar-style"/><meta content="매직 백과" name="apple-mobile-web-app-title"/><meta content="#6f4cff" name="theme-color"/><link href="./manifest.webmanifest?v=stable2" rel="manifest"/><link href="./apple-touch-icon.png?v=stable2" rel="apple-touch-icon" sizes="180x180"/><link href="./icon-192.png?v=stable2" rel="icon" sizes="192x192" type="image/png"/><title>요술방망이 음식 자동검색판 V8.12</title><style>
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><meta content="yes" name="apple-mobile-web-app-capable"/><meta content="default" name="apple-mobile-web-app-status-bar-style"/><meta content="매직 백과" name="apple-mobile-web-app-title"/><meta content="#6f4cff" name="theme-color"/><link href="./manifest.webmanifest?v=stable2" rel="manifest"/><link href="./apple-touch-icon.png?v=stable2" rel="apple-touch-icon" sizes="180x180"/><link href="./icon-192.png?v=stable2" rel="icon" sizes="192x192" type="image/png"/><title>요술방망이 음식 집중검색판 V8.13</title><style>
 :root{--bg:#f4f8ff;--card:#fff;--ink:#172033;--muted:#68758a;--line:#dbe4f0;--blue:#2457a6;--soft:#eef5ff;--yellow:#fff6cf}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.7}button,input{font:inherit}button{cursor:pointer}header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}.head{max-width:1180px;margin:auto;padding:11px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px}.brand{font-size:1.45rem;font-weight:950}.country-title{font-size:1.3rem;font-weight:900}.back,.smallbtn{border:1px solid #cbd5e1;background:#fff;border-radius:11px;padding:8px 11px;font-weight:800}nav{display:flex;gap:7px;overflow-x:auto;padding:7px 16px 10px;max-width:1180px;margin:auto}nav a{white-space:nowrap;text-decoration:none;color:#294766;background:#f8fafc;border:1px solid var(--line);border-radius:999px;padding:5px 10px;font-size:.86rem}main{max-width:1180px;margin:auto;padding:18px 16px 60px}.hero{background:linear-gradient(135deg,#eaf4ff,#fff7d8);border-radius:26px;padding:26px;margin:4px 0 18px;text-align:center;border:1px solid #dbe7f4}.hero .earth{font-size:4.2rem}.hero h1{margin:3px 0;font-size:2.1rem}.hero p{margin:4px;color:#50627a}.search{max-width:600px;margin:17px auto 0;display:flex;gap:8px}.search input{width:100%;padding:13px 16px;border:2px solid #cbd8e8;border-radius:15px;background:#fff;font-size:1rem}.continents{display:flex;gap:8px;overflow-x:auto;margin:14px 0 18px;padding-bottom:3px}.chip{border:1px solid #ccd8e7;background:#fff;border-radius:999px;padding:8px 13px;font-weight:800;white-space:nowrap}.chip.active{background:#2457a6;color:#fff}.country-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.country-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:17px;box-shadow:0 3px 10px #00000008;cursor:pointer;min-height:155px}.country-card:hover{transform:translateY(-1px)}.flagemoji{font-size:3rem}.country-card h2{margin:3px 0 0}.country-card p{margin:2px 0;color:#5c6b7d}.tag{display:inline-block;margin-top:7px;background:#eef5ff;border-radius:999px;padding:2px 8px;font-size:.78rem;font-weight:800;color:#31507c}section{scroll-margin-top:115px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;margin-bottom:17px;box-shadow:0 2px 9px #00000006}section h2{margin:0 0 13px;font-size:1.45rem}.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.info{background:var(--soft);border-radius:13px;padding:13px}.info b{display:block;color:#31507c}.compare{background:#fff7d8;border:1px solid #f1df94;border-radius:15px;padding:14px;margin-top:13px}.compare b{color:#7a5a00}.flagbox{background:#e5e7eb;border-radius:16px;padding:24px;margin:8px auto 14px;max-width:700px}.flagimg{display:block;width:min(640px,100%);max-height:360px;object-fit:contain;margin:0 auto;border:0;background:transparent;box-shadow:none}.lang-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.lang{background:#fbfdff;border:1px solid var(--line);border-radius:13px;padding:14px}.native{font-size:1.25rem;font-weight:900}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.item{border:1px solid var(--line);border-radius:14px;padding:13px;background:#fff}.item.minecard{background:var(--yellow)}.photo-area{height:185px;border-radius:11px;background:#edf2f7;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:4rem}.photo-area img{width:100%;height:100%;object-fit:cover}.item h3{margin:9px 0 4px}.item p{margin:4px 0}.actions{display:flex;justify-content:space-between;gap:8px;margin-top:9px;flex-wrap:wrap}.actions button,.add-btn{border:1px solid #cbd5e1;background:#fff;border-radius:10px;padding:7px 9px;font-weight:700}.right{display:flex;gap:6px;flex-wrap:wrap}.edit-desc{background:#eef5ff!important}.reset-desc{color:#667085}.related-status{font-size:.76rem;color:#a16207;font-weight:800}.mine{display:inline-block;background:#ffe89b;color:#6f5400;border-radius:999px;padding:2px 7px;font-size:.78rem;font-weight:800}.history{display:grid;grid-template-columns:1fr 1fr;gap:10px}.event{border:1px solid var(--line);border-radius:12px;padding:12px}.note{font-size:.88rem;color:var(--muted)}.hidden{display:none!important}@media(max-width:760px){.country-grid{grid-template-columns:repeat(2,1fr)}.info-grid,.cards,.history,.lang-grid{grid-template-columns:1fr}.hero h1{font-size:1.65rem}.head{align-items:flex-start}}@media(max-width:430px){.country-grid{grid-template-columns:1fr 1fr}.country-card{padding:13px;min-height:145px}.flagemoji{font-size:2.4rem}}
 
 /* v20 usability */
@@ -127,7 +127,7 @@ body.view-cards #detail .cards .item>.actions{display:none}
 #food{margin-top:8px}
 #food>h2{font-size:30px}
 </style>
-</head><body><div id="ns9015Banner" style="position:sticky;top:0;z-index:9999;background:#173f70;color:white;text-align:center;font-weight:800;padding:10px 8px;font-size:15px;letter-spacing:.2px">✅ MASTER V28 · NS90.298 DESCRIPTION-ONLY RECOMMENDATION + AUTO SEARCH · FOOD MIGRATION V8.12</div>
+</head><body><div id="ns9015Banner" style="position:sticky;top:0;z-index:9999;background:#173f70;color:white;text-align:center;font-weight:800;padding:10px 8px;font-size:15px;letter-spacing:.2px">✅ MASTER V28 · NS90.298 DESCRIPTION-ONLY RECOMMENDATION + AUTO SEARCH · FOOD MIGRATION V8.13</div>
 <style>
 #kbBtn{position:fixed;right:14px;bottom:14px;z-index:12020;border:0;border-radius:999px;padding:13px 17px;background:#244b76;color:#fff;font-weight:900;box-shadow:0 4px 14px #0003}
 #kbPanel{display:none;position:fixed;inset:0;z-index:12030;background:#f7f4ec;overflow:auto;padding:16px}
@@ -5347,5 +5347,77 @@ window.addItem=function(section,prefill=''){
 function sync(){try{const b=document.getElementById('ns9015Banner');if(b){b.textContent='✅ '+V;b.dataset.release='NS90.298';b.dataset.build='294-expanded-search-country-isolation'}}catch(_){}try{document.title='요술방망이 백과사전 · NS90.298'}catch(_){}try{if(window.__NS9021_ONE_ENGINE)window.__NS9021_ONE_ENGINE.version=V}catch(_){}}
 sync();addEventListener('pageshow',()=>setTimeout(sync,80));setInterval(sync,1100);
 window.__NS90289={version:V,registry,remaining,rule:'recommendation = CANDIDATES minus canonical representative registry; candidate registered before search; no READY/card/deletion dependency'};
+})();
+</script>
+<style id="v813-food-deep-search-style">
+.v813-depth-note{margin:8px 0;padding:9px 11px;border-radius:10px;background:#eef5ff;color:#31507c;font-size:.88rem;font-weight:700}
+</style>
+<script id="v813-food-deep-search">
+(()=>{
+'use strict';
+const RELEASE='V8.13';
+const ENGINE='NS90.299 FOOD DEEP SEARCH';
+const attemptKey=(name)=>'magic_food_v813_attempt|'+String(COUNTRY||'')+'|'+String(name||'').trim();
+const norm=x=>{try{return normalizeItemName(cardInputName(String(x||'')))}catch(_){return String(x||'').trim().toLowerCase()}};
+function uniq(a){const s=new Set(),o=[];for(const x of a){const v=String(x||'').trim(),k=norm(v);if(v&&k&&!s.has(k)){s.add(k);o.push(v)}}return o}
+function countryTerms(){const c=countries?.[COUNTRY]||{};return uniq([c.name,c.en,COUNTRY])}
+async function deepFoodResolve(name,depth=1,onStage){
+ const seeds=[name];
+ try{if(typeof V3_aliases==='function')seeds.push(...V3_aliases(name))}catch(_){}
+ const cts=countryTerms();
+ if(depth>=2){for(const c of cts.slice(0,2)){seeds.push(`${name} ${c}`,`${c} ${name}`,`${name} ${c} 음식`,`${c} ${name} 요리`)}}
+ if(depth>=3){
+   try{seeds.push(...(await ns90294WikidataTitles(name,'food',{aliases:seeds,sectionLabel:'음식'})))}catch(_){}
+   for(const q of uniq(seeds).slice(0,10)){
+     let hits=[];try{hits=await v22SearchHits(q,'food')||[]}catch(_){}
+     for(const h of hits.slice(0,5))seeds.push(h?.title);
+   }
+ }
+ if(depth>=4){
+   const extras=[];
+   for(const q of uniq(seeds).slice(0,14)){
+     try{for(const h of (await ns9069WikidataHits(q,'food')||[]).slice(0,6))extras.push(h?.title)}catch(_){}
+   }
+   seeds.push(...extras);
+ }
+ const list=uniq(seeds),limit=depth===1?2:depth===2?6:depth===3?14:24;
+ for(let i=0;i<Math.min(limit,list.length);i++){
+   const q=list[i]; if(onStage)onStage(q,i+1,Math.min(limit,list.length));
+   try{const v=await ONE_CARD_ENGINE.resolve({section:'food',name:cardInputName(q)});if(v?.desc){return {v,used:q}}}catch(_){}
+ }
+ return null;
+}
+async function manualWhite(e,b){
+ const panel=b.closest('.rep-card-panel-v5');const sec=panel?.closest('section[id]')?.id;if(sec!=='food'||!b.classList.contains('can-make'))return;
+ e.preventDefault();e.stopImmediatePropagation();if(b.dataset.busy==='1')return;
+ const name=cardInputName((b.textContent||'').replace(/^\s*[◆○…]\s*/,''));
+ let n=Number(localStorage.getItem(attemptKey(name))||0)+1;n=Math.min(n,4);localStorage.setItem(attemptKey(name),String(n));
+ b.dataset.busy='1';b.disabled=true;const pv=panel.querySelector('.rep-preview-v5');
+ const labels=['기본 이름·별칭','나라+음식 문맥','현지어·영문·문서명 확장','Wikidata까지 넓힌 집중검색'];
+ const stage=(q,i,total)=>{b.textContent=`… ${name}`;if(pv)pv.innerHTML=`<div class="preview-card"><b>🔎 ${esc(name)} ${n}차 집중검색</b><div class="v813-depth-note">${labels[n-1]} · 후보 ${i}/${total}</div><p>${esc(q)} 확인 중…</p></div>`};
+ let got=null;try{got=await deepFoodResolve(name,n,stage)}catch(err){console.warn('[V8.13 manual deep]',err)}
+ b.dataset.busy='0';b.disabled=false;
+ if(got?.v?.desc){try{ns9053SaveReady(v12Request('food',name),got.v);ns90154MarkSearched('food',name)}catch(_){};localStorage.removeItem(attemptKey(name));b.textContent='◆ '+name;b.className='rep-card-btn-v5 verified-ready';b.title='검색 확인 완료 · 눌러서 미리보기를 다시 엽니다.';try{openRepresentativePreview('food',name,got.v,panel)}catch(_){} }
+ else{b.textContent='○ '+name;b.className='rep-card-btn-v5 can-make';if(pv)pv.innerHTML=`<div class="preview-card"><h3>${esc(name)}</h3><p>${n}차 집중검색에서도 확정하지 못했습니다.</p><div class="v813-depth-note">${n<4?'다시 누르면 '+(n+1)+'차로 검색 범위를 더 넓힙니다.':'가장 넓은 음식 전용 검색까지 확인했습니다.'}</div></div>`;}
+}
+document.addEventListener('click',e=>{const b=e.target.closest?.('.rep-card-btn-v5.can-make');if(b)manualWhite(e,b)},true);
+async function enhancedAuto(){
+ if(window.__V813_AUTO_RUNNING)return; if(!confirm('전체 나라의 흰색 음식 이름을 2단계 음식 전용 검색까지 자동 확인합니다.\n자동검색 뒤에도 흰색이면 직접 누를 때 3·4차 집중검색으로 더 넓혀 찾습니다. 시작할까요?'))return;
+ window.__V813_AUTO_RUNNING=true;const btn=document.getElementById('ns90297Auto'),pg=document.getElementById('ns90297Progress');if(btn){btn.textContent='자동검색 중…';btn.disabled=true}
+ const old=COUNTRY;let done=0,ok=0,skip=0,fail=0;const targets=window.__NS90297?.targets||Object.keys(foodData||{});let total=0;
+ const namesFor=cc=>{const ov=COUNTRY_OVERVIEWS?.[cc]?.food;let a=(Array.isArray(ov)?String(ov[2]||''):'').split(/[·/]/).map(x=>x.trim()).filter(Boolean);if(Array.isArray(foodData?.[cc]))a.push(...foodData[cc].map(x=>String(x?.[0]||'').trim()));return uniq(a)};
+ for(const cc of targets)total+=namesFor(cc).length;
+ try{for(const cc of targets){COUNTRY=cc;for(const name of namesFor(cc)){done++;let snap=null;try{snap=ns9053LoadReady(v12Request('food',name))}catch(_){};if(snap?.desc){skip++;continue}if(pg)pg.textContent=`${countries?.[cc]?.name||cc} · ${name} · 2단계 자동검색 ${done}/${total}`;let got=null;try{got=await deepFoodResolve(name,2)}catch(_){};if(got?.v?.desc){ok++;try{ns9053SaveReady(v12Request('food',name),got.v);ns90154MarkSearched('food',name)}catch(_){}}else fail++;await new Promise(r=>setTimeout(r,25));}}
+ }finally{COUNTRY=old||'KR';window.__V813_AUTO_RUNNING=false;if(btn){btn.textContent='🔎 전체 나라 음식 자동검색';btn.disabled=false}if(pg)pg.textContent=`자동검색 완료 · 확인 ${done}/${total} · 새 성공 ${ok} · 기존 ${skip} · 흰색 ${fail} · 남은 흰색은 직접 누르면 3·4차 집중검색`;}
+}
+function sync(){
+ document.title='요술방망이 음식 자동검색판 V8.13';
+ const b=document.getElementById('ns9015Banner');if(b){b.textContent=`✅ MASTER V28 · ${ENGINE} · FOOD MIGRATION ${RELEASE}`;b.dataset.release=RELEASE;b.dataset.engine=ENGINE}
+ const brand=document.getElementById('brand');if(brand)brand.textContent='요술방망이 음식 집중검색판';
+ const auto=document.getElementById('ns90297Auto');if(auto&&!auto.dataset.v813){auto.dataset.v813='1';auto.onclick=enhancedAuto}
+ const note=document.querySelector('.trial-note');if(note)note.innerHTML='<b>🍽️ 음식 전용 다단계 검색판 V8.13</b> · 자동검색은 2단계까지 넓혀 찾고, 남은 흰색 이름표를 다시 누를 때마다 3차·4차 집중검색으로 검색 범위를 더 넓힙니다.';
+}
+sync();addEventListener('pageshow',()=>setTimeout(sync,100));setInterval(sync,1200);
+window.__V813={release:RELEASE,engine:ENGINE,deepFoodResolve};
 })();
 </script>
