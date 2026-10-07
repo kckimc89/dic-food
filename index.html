@@ -4463,6 +4463,57 @@ sync();addEventListener('pageshow',()=>setTimeout(sync,120));window.__V814={rele
 
 </script>
 
+
+<style id="v819-search-bridge-style">
+#v819Release{display:inline-block;margin-left:8px;padding:3px 8px;border-radius:999px;background:#eef5ff;border:1px solid #b9cbe5;color:#173f70;font-size:.78rem;font-weight:900}
+</style>
+<script id="v819-search-bridge">
+(()=>{
+'use strict';
+const RELEASE='V8.19', ENGINE='NS90.305 FOOD CLICK BRIDGE';
+const esc2=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function cleanName(b){return String(b?.textContent||'').replace(/^\s*[◆○…]\s*/,'').trim()}
+async function fallbackSearch(e,b){
+  if(!b||b.dataset.v819busy==='1')return;
+  e.preventDefault();e.stopImmediatePropagation();
+  const name=cleanName(b); if(!name)return;
+  const panel=b.closest('.rep-card-panel-v5')||b.parentElement?.closest?.('div');
+  const pv=panel?.querySelector?.('.rep-preview-v5');
+  b.dataset.v819busy='1'; b.disabled=true; const original=b.textContent;
+  b.textContent='… '+name;
+  if(pv)pv.innerHTML='<div class="preview-card"><b>🔎 '+esc2(name)+' 검색 중…</b><p>음식 전용 구조변경 검색을 시작했습니다.</p></div>';
+  try{
+    const deep=window.__V814?.rescueResolve || window.__V813?.deepFoodResolve;
+    if(typeof deep!=='function')throw new Error('food search engine unavailable');
+    let got=null;
+    // V8.14 resolver signatures differ; try rescue first, then V8.13 exposed resolver.
+    if(window.__V814?.rescueResolve) got=await window.__V814.rescueResolve(name,4,(q,i,total)=>{if(pv)pv.innerHTML='<div class="preview-card"><b>🔎 '+esc2(name)+' 검색 중…</b><p>'+esc2(q)+' · '+i+'/'+total+'</p></div>'});
+    else got=await deep(name,4,(q,i,total)=>{if(pv)pv.innerHTML='<div class="preview-card"><b>🔎 '+esc2(name)+' 검색 중…</b><p>'+esc2(q)+' · '+i+'/'+total+'</p></div>'});
+    const v=got?.v||got;
+    if(v?.desc){
+      try{ns9053SaveReady(v12Request('food',name),v);ns90154MarkSearched('food',name)}catch(_){}
+      b.textContent='◆ '+name;b.classList.remove('can-make');b.classList.add('verified-ready');b.title='검색 확인 완료 · 눌러서 미리보기를 엽니다.';
+      try{openRepresentativePreview('food',name,v,panel)}catch(_){if(pv)pv.innerHTML='<div class="preview-card"><h3>'+esc2(name)+'</h3><p>'+esc2(v.desc)+'</p></div>'}
+    }else{
+      b.textContent='○ '+name;
+      if(pv)pv.innerHTML='<div class="preview-card"><h3>'+esc2(name)+'</h3><p>이번 집중검색에서는 확정하지 못했습니다. 다시 누르면 다시 확인합니다.</p></div>';
+    }
+  }catch(err){console.error('[V8.19 click bridge]',err);b.textContent=original||('○ '+name);if(pv)pv.innerHTML='<div class="preview-card"><h3>'+esc2(name)+'</h3><p>검색 연결을 시작하지 못했습니다. 페이지를 새로고침한 뒤 다시 눌러 주세요.</p></div>'}
+  finally{b.dataset.v819busy='0';b.disabled=false}
+}
+// Fallback bridge: old handler gets first chance. If it does not recognize the food panel, this handler owns the tap.
+document.addEventListener('click',e=>{const b=e.target.closest?.('.rep-card-btn-v5.can-make');if(b)fallbackSearch(e,b)},true);
+function sync(){
+ try{document.title='요술방망이 음식 검색판 V8.19'}catch(_){}
+ try{const b=document.getElementById('ns9015Banner');if(b){b.textContent='✅ '+ENGINE+' · '+RELEASE;b.dataset.release=RELEASE;b.dataset.engine=ENGINE}}catch(_){}
+ try{const brand=document.getElementById('brand');if(brand){brand.textContent='요술방망이 음식 검색판 V8.19';let x=document.getElementById('v819Release');if(!x){x=document.createElement('span');x.id='v819Release';brand.insertAdjacentElement('afterend',x)}x.textContent=RELEASE}}catch(_){}
+ try{const note=document.querySelector('.trial-note');if(note)note.innerHTML='<b>🍽️ 음식 검색판 V8.19</b> · 흰색 음식 이름표의 클릭을 음식 검색엔진에 직접 연결했습니다. 검색 중에는 해당 이름표와 미리보기만 갱신합니다.'}catch(_){}
+}
+sync();addEventListener('pageshow',()=>setTimeout(sync,150),{passive:true});addEventListener('load',()=>setTimeout(sync,150),{passive:true});
+window.__V819={release:RELEASE,engine:ENGINE};
+})();
+</script>
+
 </body></html>
 <!-- NS90.130: exact NS90.120 proven ONE MASTER baseline restore. No search/resolver logic added. -->
 <script >
@@ -5618,7 +5669,8 @@ window.__V815={release:RELEASE,engine:ENGINE,rule:'no periodic UI repaint; row/p
 })();
 
 </script>
-\n<style id="v816-final-owner-style">\n#v816Release{display:inline-block;margin-left:8px;padding:3px 8px;border-radius:999px;background:#eef5ff;border:1px solid #b9cbe5;color:#173f70;font-size:.78rem;font-weight:900}\n</style>\n<script id="v816-final-owner" >
+
+<style id="v816-final-owner-style">\n#v816Release{display:inline-block;margin-left:8px;padding:3px 8px;border-radius:999px;background:#eef5ff;border:1px solid #b9cbe5;color:#173f70;font-size:.78rem;font-weight:900}\n</style>\n<script id="v816-final-owner" >
 
 (()=>{
 'use strict';
@@ -5636,4 +5688,4 @@ addEventListener('load',()=>setTimeout(sync,120),{passive:true});
 window.__V816={release:RELEASE,engine:ENGINE,rule:'final version owner + V8.14 rescue auto owner; no periodic repaint'};
 })();
 
-</script>\n
+</script>
