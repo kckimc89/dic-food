@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌍 글로벌 미식 아카이브 : World Gastronomy Guide</title>
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --primary: #2c3e50;
+            --accent: #e67e22;
+            --text-main: #2d3436;
+            --text-sub: #636e72;
+            --border: #e9ecef;
+        }
+        * {
+            box-sizing: border-box;
+            font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+        }
+        body {
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 40px 20px;
+            color: var(--text-main);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        h1 {
+            color: var(--primary);
+            font-size: 32px;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+        p.subtitle {
+            color: var(--text-sub);
+            font-size: 15px;
+        }
+        /* 필터 네비게이션 */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 35px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            background-color: #fff;
+            border: 1px solid #ced4da;
+            padding: 8px 18px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-sub);
+            transition: all 0.2s ease;
+        }
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+        }
+        /* 그리드 레이아웃 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+        .card-header {
+            background-color: #f1f3f5;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border);
+        }
+        .card-title-wrap h3 {
+            margin: 0 0 4px 0;
+            font-size: 19px;
+            color: var(--primary);
+        }
+        .region-tag {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .card-emoji {
+            font-size: 36px;
+        }
+        .card-body {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .info-group h4 {
+            margin: 0 0 4px 0;
+            font-size: 12px;
+            font-weight: 700;
+            color: #adb5bd;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .info-group p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--text-main);
+            line-height: 1.5;
+        }
+        .pairing-box {
+            background-color: #f8f9fa;
+            border-left: 3px solid var(--accent);
+            padding: 10px 12px;
+            font-size: 13px;
+            color: #495057;
+            border-radius: 0 4px 4px 0;
+            margin-top: auto;
+        }
+        .pairing-box strong {
+            color: var(--accent);
+        }
+        footer.site-footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 13px;
+            color: #adb5bd;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🌍 글로벌 미식 아카이브</h1>
+        <p class="subtitle">대륙별 대표 요리의 역사, 본질적인 조리법, 그리고 페어링 노트를 탐색합니다.</p>
+    </header>
+
+    <!-- 카테고리 필터 -->
+    <div class="filter-container">
+        <button class="filter-btn active" onclick="filterFood('all')">전체</button>
+        <button class="filter-btn" onclick="filterFood('유럽')">유럽</button>
+        <button class="filter-btn" onclick="filterFood('아시아')">아시아</button>
+        <button class="filter-btn" onclick="filterFood('아메리카')">아메리카</button>
+        <button class="filter-btn" onclick="filterFood('오세아니아/아프리카')">오세아니아 / 아프리카</button>
+    </div>
+
+    <!-- 콘텐츠 그리드 -->
+    <div class="card-grid" id="cardGrid"></div>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 World Gastronomy Guide. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const gourmetData = [
+            {
+                name: "나폴리탄 피자 (Pizza Napoletana)",
+                country: "이탈리아",
+                region: "유럽",
+                emoji: "🍕",
+                ingredients: "산 마르자노 토마토, 버팔로 모차렐라, 생 바질, 엑스트라 버진 올리브오일",
+                recipe: "최소 시간 발효시킨 저수분 반죽을 400도 이상의 화덕에서 90초 이내로 단시간 구워냅니다.",
+                characteristic: "겉은 바삭하고 속은 쫄깃하며(Cornicione), 밀가루와 화덕 특유의 훈연향이 조화를 이룹니다.",
+                pairing: "시원한 라거 맥주 또는 산도가 높은 키안티(Chianti) 레드 와인"
+            },
+            {
+                name: "오센틱 타코 (Authentic Taco)",
+                country: "멕시코",
+                region: "아메리카",
+                emoji: "🌮",
+                ingredients: "니코말 가공 옥수수 또르띠아, 카르네 아사다(쇠고기) 또는 알 파스토르(돼지고기), 고수, 양파",
+                recipe: "뜨겁게 달군 철판에 또르띠아를 데우고, 직화로 구워낸 육류와 허브, 살사를 얹어 냅니다.",
+                characteristic: "옥수수 특유의 고소함과 고기의 스모키함, 라임의 산미가 어우러지는 강렬한 풍미.",
+                pairing: "라임 슬라이스를 곁들인 멕시칸 라거 또는 메즈칼(Mezcal)"
+            },
+            {
+                name: "에도마에 스시 (Edomae Sushi)",
+                country: "일본",
+                region: "아시아",
+                emoji: "🍣",
+                ingredients: "적초(아카즈)로 간을 한 샤리(초밥용 밥), 제철 흰살·붉은살 생선",
+                recipe: "숙성(시메) 또는 절임 과정을 거친 네타와 온도가 알맞은 샤리를 정교하게 쥡니다.",
+                characteristic: "생선의 감칠맛과 부드러움, 밥알이 입안에서 흩어지는 최적의 식감이 핵심입니다.",
+                pairing: "깔끔한 준마이나이긴슈 사케 또는 차가운 녹차"
+            },
+            {
+                name: "정통 비프 부르기뇽 (Beef Bourguignon)",
+                country: "프랑스",
+                region: "유럽",
+                emoji: "🍲",
+                ingredients: "소고기 양지, 부르고뉴 레드 와인, 베이컨(라동), 양송이버섯, 진주양파",
+                recipe: "와인과 육수에 소고기와 향신채를 넣고 오븐에서 수 시간 동안 부드럽게 브레이징(약불 조림)합니다.",
+                characteristic: "와인의 탄닌이 고기의 단백질을 분해해 입안에서 녹아내리는 깊고 묵직한 스튜 요리.",
+                pairing: "풀바디 피노 누아(Pinot Noir) 와인"
+            },
+            {
+                name: "태국 톰얌꿍 (Tom Yum Goong)",
+                country: "태국",
+                region: "아시아",
+                emoji: "🦐",
+                ingredients: "새우, 레몬그라스, 갈랑갈, 카피라임 잎, 남플라(피시소스), 라임즙, 새눈고추",
+                recipe: "향신 채소를 우려낸 육수에 새우를 넣고 끓인 뒤, 마지막에 산미와 매운맛을 더해 완성합니다.",
+                characteristic: "매운맛, 신맛, 짠맛, 단맛이 복합적으로 어우러져 미각을 강렬하게 깨우는 수프.",
+                pairing: "드라이한 리슬링(Riesling) 화이트 와인 또는 타이거 맥주"
+            },
+            {
+                name: "모로칸 태진 (Moroccan Tagine)",
+                country: "모로코",
+                region: "오세아니아/아프리카",
+                emoji: "🍲",
+                ingredients: "양고기(또는 닭고기), 샤프란, 생강, 쿠민, 말린 자두, 아몬드",
+                recipe: "원뿔형 토기 냄비(태진)에 재료를 넣고 수증기가 순환하도록 장시간 약불에서 쪄냅니다.",
+                characteristic: "고기의 육즙이 날아가지 않고 향신료와 과일의 단맛이 깊게 배어 풍부한 복합미를 냅니다.",
+                pairing: "스파이시한 노트가 있는 시라(Syrah) 레드 와인 또는 민트티"
+            }
+        ];
+
+        function displayFoods(items) {
+            const grid = document.getElementById('cardGrid');
+            grid.innerHTML = '';
+            
+            items.forEach(food => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <div class="card-header">
+                        <div class="card-title-wrap">
+                            <span class="region-tag">${food.country} (${food.region})</span>
+                            <h3>${food.name}</h3>
+                        </div>
+                        <div class="card-emoji">${food.emoji}</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="info-group">
+                            <h4>Key Ingredients</h4>
+                            <p>${food.ingredients}</p>
+                        </div>
+                        <div class="info-group">
+                            <h4>Culinary Method</h4>
+                            <p>${food.recipe}</p>
+                        </div>
+                        <div class="info-group">
+                            <h4>Characteristics</h4>
+                            <p>${food.characteristic}</p>
+                        </div>
+                        <div class="pairing-box">
+                            <strong>🍷 Pairing Note:</strong> ${food.pairing}
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterFood(region) {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.textContent.includes(region) || (region === 'all' && btn.textContent.includes('전체'))) {
+                    btn.classList.add('active');
+                }
+            });
+
+            if (region === 'all') {
+                displayFoods(gourmetData);
+            } else {
+                const filtered = gourmetData.filter(item => item.region === region);
+                displayFoods(filtered);
+            }
+        }
+
+        // 초기 실행
+        displayFoods(gourmetData);
+    </script>
+
+</body>
+</html>
