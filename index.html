@@ -3252,7 +3252,7 @@ window.__MAGIC_V7_DIAGNOSTIC={
  }
  async function boot(){for(const c of ['ES','JP','US','FR','IT','CN'])for(const s of secs)await migrate(c,s);await ns90180FreshJoshuaTest();try{if(!document.getElementById('detail').classList.contains('hidden'))for(const s of secs)await renderSection(s)}catch(_){} }
  function sync(){try{const b=document.getElementById('ns9015Banner');if(b)b.textContent='✅ '+V}catch(_){}try{document.title='요술방망이 백과사전 · NS90.298'}catch(_){}try{if(window.__NS9021_ONE_ENGINE)window.__NS9021_ONE_ENGINE.version=V}catch(_){}}
- boot().catch(e=>console.error('[NS90.176 boot]',e));sync();window.addEventListener('DOMContentLoaded',sync);window.addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,700);setInterval(sync,1500);
+ boot().catch(e=>console.error('[NS90.176 boot]',e));sync();window.addEventListener('DOMContentLoaded',sync);window.addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,700);
 })();
 </script>
 <script id="ns90171-nondestructive-save">
@@ -3292,7 +3292,7 @@ window.__MAGIC_V7_DIAGNOSTIC={
    try{document.title='요술방망이 백과사전 · NS90.298'}catch(_){}
    try{if(window.__NS9021_ONE_ENGINE)window.__NS9021_ONE_ENGINE.version=V}catch(_){}
  }
- sync(); document.addEventListener('DOMContentLoaded',sync); window.addEventListener('load',sync); setTimeout(sync,100); setTimeout(sync,700); setInterval(sync,1500);
+ sync(); document.addEventListener('DOMContentLoaded',sync); window.addEventListener('load',sync); setTimeout(sync,100); setTimeout(sync,700); 
 })();
 </script>
 <script id="ns90177-clean-engine">(()=>{
@@ -3367,7 +3367,7 @@ cleanUI();addEventListener('DOMContentLoaded',cleanUI);addEventListener('load',c
    return result;
  };
  function sync(){try{const b=document.getElementById('ns9015Banner');if(b)b.textContent='✅ '+V}catch(_){}try{document.title='요술방망이 백과사전 · NS90.298'}catch(_){}try{if(window.__NS9021_ONE_ENGINE)window.__NS9021_ONE_ENGINE.version=V}catch(_){}}
- sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,120);setTimeout(sync,800);setInterval(sync,1600);
+ sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,120);setTimeout(sync,800);
 })();
 </script>
 <script id="ns90186-france-parity-repair">
@@ -3392,7 +3392,7 @@ cleanUI();addEventListener('DOMContentLoaded',cleanUI);addEventListener('load',c
  rhydrate().then(()=>repaintFrance());
  const prevOpen=openCountry;openCountry=function(code){const r=prevOpen(code);if(code==='FR')setTimeout(()=>{rhydrate().then(repaintFrance)},180);return r};
  function sync(){try{const b=document.getElementById('ns9015Banner');if(b)b.textContent='✅ '+V}catch(_){}try{document.title='요술방망이 백과사전 · NS90.298'}catch(_){}try{if(window.__NS9021_ONE_ENGINE)window.__NS9021_ONE_ENGINE.version=V}catch(_){}}
- sync();document.addEventListener('DOMContentLoaded',sync);window.addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,700);setInterval(sync,1500);
+ sync();document.addEventListener('DOMContentLoaded',sync);window.addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,700);
 })();
 </script>
 <script id="ns90192-france-delete-live-refresh">
@@ -3422,7 +3422,7 @@ cleanUI();addEventListener('DOMContentLoaded',cleanUI);addEventListener('load',c
    return out;
  };
  function sync(){try{const b=document.getElementById('ns9015Banner');if(b)b.textContent='✅ '+V}catch(_){}try{document.title='요술방망이 백과사전 · NS90.298'}catch(_){}try{if(window.__NS9021_ONE_ENGINE)window.__NS9021_ONE_ENGINE.version=V}catch(_){}}
- sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,700);setInterval(sync,1600);
+ sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,700);
 })();
 </script>
 <script id="ns90193-france-search-boost">
@@ -3527,7 +3527,7 @@ cleanUI();addEventListener('DOMContentLoaded',cleanUI);addEventListener('load',c
    if(input.value.trim())run();
  };
  function sync(){try{const b=document.getElementById('ns9015Banner');if(b)b.textContent='✅ '+V}catch(_){}try{document.title='요술방망이 백과사전 · NS90.298'}catch(_){}try{if(window.__NS9021_ONE_ENGINE)window.__NS9021_ONE_ENGINE.version=V}catch(_){}}
- sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,700);setInterval(sync,1600);
+ sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,700);
 })();
 </script>
 <style id="ns90208-category-aware-style">
@@ -3589,7 +3589,7 @@ cleanUI();addEventListener('DOMContentLoaded',cleanUI);addEventListener('load',c
    const sec=secNode(s);if(!sec)return baseAdd?baseAdd(s,prefill):undefined;clear(s);const panel=document.createElement('div');panel.className='ns90206-add-panel';panel.innerHTML='<p class="hint">✨ <b>새로운 항목 추천</b>과 <b>입력한 이름의 검색 후보</b>를 구분해서 보여드립니다.</p><div class="recommend-host"></div><div class="row" style="margin-top:12px"><input type="text" placeholder="찾고 싶은 다른 이름을 입력하세요" value="'+esc(prefill||'')+'"><button type="button" class="direct">검색 진행</button><button type="button" class="close">닫기</button></div><div class="ns90207-search-host"></div>';const addBtn=[...sec.querySelectorAll('.add-btn')].find(b=>String(b.getAttribute('onclick')||'').includes("addItem('"+s+"')"));(addBtn||document.getElementById(s+'List')).insertAdjacentElement('afterend',panel);const input=panel.querySelector('input'),sh=panel.querySelector('.ns90207-search-host');let timer=0,seq=0;const run=()=>{const q=input.value.trim(),token=String(++seq);sh.dataset.token=token;typedCandidates(s,q,sh,token)};input.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(run,420)});const direct=()=>{const n=input.value.trim();if(!n)return alert('찾고 싶은 이름을 입력해 주세요.');clear(s);return baseAdd?baseAdd(s,n):undefined};panel.querySelector('.direct').onclick=direct;input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();direct()}});panel.querySelector('.close').onclick=()=>clear(s);renderDiscovery(s,panel.querySelector('.recommend-host'));if(input.value.trim())run();
  };
  function sync(){try{const b=document.getElementById('ns9015Banner');if(b)b.textContent='✅ '+V}catch(_){}try{document.title='요술방망이 백과사전 · NS90.298'}catch(_){}try{if(window.__NS9021_ONE_ENGINE)window.__NS9021_ONE_ENGINE.version=V}catch(_){}}
- sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,700);setInterval(sync,1700);
+ sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,700);
 })();
 </script>
 <style id="ns90209-candidate-ready-style">
@@ -3631,7 +3631,7 @@ cleanUI();addEventListener('DOMContentLoaded',cleanUI);addEventListener('load',c
  const oldDiscover=discoverCandidateTargets;
  discoverCandidateTargets=async function(country,section){const rows=await oldDiscover(country,section);const other=new Set();for(const ss of REP_SECTIONS){if(ss===section)continue;try{for(const n of parseRepNames(oldRepText(ss),ss))other.add(norm(n))}catch(_){}}return (rows||[]).filter(t=>!other.has(norm(t?.name||t)))};
  function sync(){try{const b=document.getElementById('ns9015Banner');if(b)b.textContent='✅ '+V}catch(_){}try{document.title='요술방망이 백과사전 · NS90.298'}catch(_){}try{if(window.__NS9021_ONE_ENGINE)window.__NS9021_ONE_ENGINE.version=V}catch(_){}}
- sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,80);setTimeout(sync,600);setInterval(sync,1700);
+ sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,80);setTimeout(sync,600);
 })();
 </script>
 <style id="ns90212-light-candidate-style">
@@ -3694,7 +3694,7 @@ cleanUI();addEventListener('DOMContentLoaded',cleanUI);addEventListener('load',c
   if(input.value.trim())run(true);return r;
  };
  function sync(){try{const b=document.getElementById('ns9015Banner');if(b)b.textContent='✅ '+V}catch(_){}try{document.title='요술방망이 백과사전 · NS90.298'}catch(_){}try{if(window.__NS9021_ONE_ENGINE)window.__NS9021_ONE_ENGINE.version=V}catch(_){}}
- sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,80);setTimeout(sync,650);setInterval(sync,1700);
+ sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,80);setTimeout(sync,650);
 })();
 </script>
 <script id="ns90219-fr-description-source-pool">
@@ -3765,7 +3765,7 @@ cleanUI();addEventListener('DOMContentLoaded',cleanUI);addEventListener('load',c
    return panel;
  };
  function sync(){try{const b=document.getElementById('ns9015Banner');if(b)b.textContent='✅ '+V}catch(_){}try{document.title='요술방망이 백과사전 · NS90.298'}catch(_){}try{if(window.__NS9021_ONE_ENGINE)window.__NS9021_ONE_ENGINE.version=V}catch(_){}}
- sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,800);setInterval(sync,1800);
+ sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,800);
 })();
 </script>
 <style id="ns90221-description-leftovers-only-style">
@@ -3810,7 +3810,7 @@ cleanUI();addEventListener('DOMContentLoaded',cleanUI);addEventListener('load',c
    return panel;
  };
  function sync(){try{const b=document.getElementById('ns9015Banner');if(b)b.textContent='✅ '+V}catch(_){}try{document.title='요술방망이 백과사전 · NS90.298'}catch(_){}try{if(window.__NS9021_ONE_ENGINE)window.__NS9021_ONE_ENGINE.version=V}catch(_){}}
- sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,80);setTimeout(sync,700);setInterval(sync,1700);
+ sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,80);setTimeout(sync,700);
 })();
 </script>
 <!-- NS90.227: description leftovers are NEW/UNSEARCHED items. A tap starts the normal card search immediately; no second user choice. -->
@@ -3857,7 +3857,7 @@ cleanUI();addEventListener('DOMContentLoaded',cleanUI);addEventListener('load',c
    const apply=()=>{const panel=[...(sec?.querySelectorAll('.ns90213-panel,.ns90206-add-panel')||[])].pop();wire(panel,section)};
    apply();setTimeout(apply,0);setTimeout(apply,80);return r;
  };
- sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,800);setInterval(sync,1700);
+ sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,800);
 })();
 </script>
 
@@ -4092,7 +4092,7 @@ window.addItem=function(section,prefill=''){
  render(section,panel,box);return r;
 };
 function sync(){try{const b=document.getElementById('ns9015Banner');if(b)b.textContent='✅ '+V}catch(_){}try{document.title='요술방망이 백과사전 · NS90.298'}catch(_){}try{if(window.__NS9021_ONE_ENGINE)window.__NS9021_ONE_ENGINE.version=V}catch(_){}}
-sync();addEventListener('pageshow',()=>setTimeout(sync,60));setInterval(sync,1100);
+sync();addEventListener('pageshow',()=>setTimeout(sync,60));
 window.__NS90288={version:V,remaining,registered,rule:'candidate click/search-start registers representative BEFORE async search; recommendation never depends on READY/card/deletion'};
 })();
 </script>
@@ -4138,7 +4138,7 @@ function sync(){
  try{document.title='요술방망이 백과사전 · NS90.298'}catch(_){}
  try{if(window.__NS9021_ONE_ENGINE)window.__NS9021_ONE_ENGINE.version=V}catch(_){}
 }
-sync();addEventListener('pageshow',()=>setTimeout(sync,60));setInterval(sync,1100);
+sync();addEventListener('pageshow',()=>setTimeout(sync,60));
 window.__NS90293={version:V,rule:'country switch removes prior add panels; every add panel is bound to opening country; stale async country UI cannot survive'};
 })();
 </script>
@@ -4203,7 +4203,7 @@ window.__NS90293={version:V,rule:'country switch removes prior add panels; every
    document.getElementById('countryGrid').innerHTML=arr.map(([k,c])=>`<article class="country-card" onclick="openCountry('${k}')"><button class="favstar ${fa.includes(k)?'on':''}" onclick="toggleFav('${k}',event)">★</button><div class="flagemoji">${c.flag}</div><h2>${c.name}</h2><p>${c.en}</p><p>수도 · ${c.capital}</p><span class="tag">${c.continent}</span></article>`).join('')||'<p>조건에 맞는 나라가 없습니다.</p>';
  };
  function sync(){try{const b=document.getElementById('ns9015Banner');if(b){b.textContent='✅ '+V;b.dataset.release='NS90.298';}}catch(_){} try{document.title='요술방망이 백과사전 · NS90.298'}catch(_){} try{if(window.__NS9021_ONE_ENGINE)window.__NS9021_ONE_ENGINE.version=V}catch(_){}}
- renderHome();sync();addEventListener('pageshow',()=>setTimeout(()=>{renderHome();sync()},50));setInterval(sync,1200);
+ renderHome();sync();addEventListener('pageshow',()=>setTimeout(()=>{renderHome();sync()},50));
  window.__NS90296={version:V,countries:TARGET,rule:'food-only shared engine; country+food+alias query expansion; descriptions and foodData candidates are auto searched'};
 })();
 </script>
@@ -4245,7 +4245,7 @@ async function runAll(){
  }finally{COUNTRY=old||'KR';running=false;if(btn){btn.textContent='🔎 전체 나라 음식 자동검색';btn.disabled=false}if(pg)pg.textContent=(stopRequested?'자동검색을 중지했습니다. ':'전체 자동검색을 마쳤습니다. ')+`확인 ${done}/${total} · 새 성공 ${ok} · 기존 ${skip} · 실패 ${fail}`;try{renderHome()}catch(_){} }
 }
 function sync(){try{const b=document.getElementById('ns9015Banner');if(b){b.textContent='✅ '+V;b.dataset.release='NS90.298';b.dataset.build='297-clean-auto-search'}}catch(_){}try{document.title='요술방망이 백과사전 · NS90.298'}catch(_){}try{if(window.__NS9021_ONE_ENGINE)window.__NS9021_ONE_ENGINE.version=V}catch(_){}ensureUI()}
-sync();addEventListener('pageshow',()=>setTimeout(sync,80));setInterval(sync,1200);window.__NS90297={version:V,runAll,targets:TARGET};
+sync();addEventListener('pageshow',()=>setTimeout(sync,80));window.__NS90297={version:V,runAll,targets:TARGET};
 })();
 </script>
 
@@ -4334,7 +4334,7 @@ function sync(){
  try{document.title='요술방망이 백과사전 · NS90.298'}catch(_){}
  try{if(window.__NS9021_ONE_ENGINE)window.__NS9021_ONE_ENGINE.version=V}catch(_){}
 }
-sync();addEventListener('pageshow',()=>setTimeout(sync,60));addEventListener('load',()=>setTimeout(sync,80));setInterval(sync,1200);
+sync();addEventListener('pageshow',()=>setTimeout(sync,60));addEventListener('load',()=>setTimeout(sync,80));
 window.__NS90298={version:V,descriptionLeftovers,rule:'visible recommendation = description-pack candidates minus registered representatives/custom only; no external discovery'};
 })();
 </script>
@@ -4399,7 +4399,7 @@ async function autoRescue(){if(window.__V814_AUTO)return;if(!confirm('전체 나
  finally{COUNTRY=old||'KR';window.__V814_AUTO=false;if(btn){btn.disabled=false;btn.textContent='🔎 전체 나라 음식 자동검색'}if(pg)pg.textContent='V8.14 완료 · 확인 '+done+'/'+total+' · 새 성공 '+ok+' · 기존 '+skip+' · 흰색 '+fail;try{if(typeof renderHome==='function')renderHome()}catch(_){}}
 }
 function sync(){document.title='요술방망이 음식 구조변경 검색판 V8.14';const b=document.getElementById('ns9015Banner');if(b){b.textContent='✅ MASTER V28 · '+ENGINE+' · FOOD MIGRATION '+RELEASE;b.dataset.release=RELEASE;b.dataset.engine=ENGINE}const brand=document.getElementById('brand');if(brand)brand.textContent='요술방망이 음식 구조변경 검색판 V8.14';const auto=document.getElementById('ns90297Auto');if(auto&&!auto.dataset.v814){auto.dataset.v814='1';auto.onclick=autoRescue}const note=document.querySelector('.trial-note');if(note)note.innerHTML='<b>🍽️ 음식 구조변경 검색판 V8.14</b> · 기존 검색에서 남은 흰색 음식은 나라별 현지어 Wikipedia와 Wikidata를 별도 경로로 찾아 다시 음식 여부를 확인합니다. 수동 흰색 검색도 같은 구조변경 경로를 사용합니다.'}
-sync();addEventListener('pageshow',()=>setTimeout(sync,120));setInterval(sync,1300);window.__V814={release:RELEASE,engine:ENGINE,rescue,resolve};
+sync();addEventListener('pageshow',()=>setTimeout(sync,120));window.__V814={release:RELEASE,engine:ENGINE,rescue,resolve};
 })();
 </script>
 
@@ -4681,7 +4681,7 @@ more.FR={
  }
  addEventListener('DOMContentLoaded',()=>{sync();ensureFranceStore();setTimeout(sync,300)});
  addEventListener('load',()=>{sync();ensureFranceStore();setTimeout(sync,500)});
- setInterval(sync,1600);
+ 
 })();
 </script>
 <script id="ns90194-france-ready-reopen-fix">
@@ -4708,7 +4708,7 @@ more.FR={
    }catch(err){console.warn('[NS90.194 READY reopen]',err)}
  },true);
  function sync(){try{const b=document.getElementById('ns9015Banner');if(b)b.textContent='✅ '+V}catch(_){};try{document.title='요술방망이 백과사전 · NS90.298'}catch(_){};try{if(window.__NS9021_ONE_ENGINE)window.__NS9021_ONE_ENGINE.version=V}catch(_){}}
- sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,700);setInterval(sync,1600);
+ sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,700);
 })();
 </script>
 <script id="ns90197-france-culture-ready-quality">
@@ -4752,7 +4752,7 @@ more.FR={
    }catch(_){ }},80);
  },false);
  function sync(){try{const b=document.getElementById('ns9015Banner');if(b)b.textContent='✅ '+V}catch(_){};try{document.title='요술방망이 백과사전 · NS90.298'}catch(_){};try{if(window.__NS9021_ONE_ENGINE)window.__NS9021_ONE_ENGINE.version=V}catch(_){}}
- sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,700);setInterval(sync,1600);
+ sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,700);
 })();
 </script>
 <script id="ns90199-culture-fallback-route-fix">
@@ -4791,7 +4791,7 @@ more.FR={
  };
  v18ManualAssist=async function(section,name){const panel=document.getElementById(section)?.querySelector('.rep-card-panel-v5');const pv=panel?.querySelector('.rep-preview-v5');if(pv)return v22ShowAssistResults(section,name,pv,name)};
  function sync(){try{const b=document.getElementById('ns9015Banner');if(b)b.textContent='✅ '+V}catch(_){}try{document.title='요술방망이 백과사전 · NS90.298'}catch(_){}try{if(window.__NS9021_ONE_ENGINE)window.__NS9021_ONE_ENGINE.version=V}catch(_){}}
- sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,700);setInterval(sync,1600);
+ sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,700);
 })();
 </script>
 <script id="ns90200-culture-validation-fix">
@@ -4822,7 +4822,7 @@ more.FR={
    try{document.title='요술방망이 백과사전 · NS90.298'}catch(_){}
    try{if(window.__NS9021_ONE_ENGINE)window.__NS9021_ONE_ENGINE.version=V}catch(_){}
  }
- sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,700);setInterval(sync,1600);
+ sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,700);
 })();
 </script>
 <script id="ns90201-famous-item-validation-fix">
@@ -4855,7 +4855,7 @@ more.FR={
    try{document.title='요술방망이 백과사전 · NS90.298'}catch(_){}
    try{if(window.__NS9021_ONE_ENGINE)window.__NS9021_ONE_ENGINE.version=V}catch(_){}
  }
- sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,700);setInterval(sync,1600);
+ sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,700);
 })();
 </script>
 <script id="ns90202-category-validation-boost">
@@ -4890,7 +4890,7 @@ more.FR={
   try{document.title='요술방망이 백과사전 · NS90.298'}catch(_){}
   try{if(window.__NS9021_ONE_ENGINE)window.__NS9021_ONE_ENGINE.version=V}catch(_){}
  }
- sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,700);setInterval(sync,1600);
+ sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,700);
 })();
 </script>
 <script id="ns90203-search-validation-cleanup">
@@ -4930,7 +4930,7 @@ more.FR={
   try{document.title='요술방망이 백과사전 · NS90.298'}catch(_){ }
   try{if(window.__NS9021_ONE_ENGINE)window.__NS9021_ONE_ENGINE.version=V}catch(_){ }
  }
- sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,700);setInterval(sync,1600);
+ sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,700);
 })();
 </script>
 <script id="ns90204-identity-display-refinement">
@@ -4971,7 +4971,7 @@ more.FR={
    try{document.title='요술방망이 백과사전 · NS90.298'}catch(_){ }
    try{if(window.__NS9021_ONE_ENGINE)window.__NS9021_ONE_ENGINE.version=V}catch(_){ }
  }
- sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,700);setInterval(sync,1600);
+ sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,700);
 })();
 </script>
 <script id="ns90205-common-engine-multilingual-boost">
@@ -5028,7 +5028,7 @@ more.FR={
    return out.slice(0,10);
  };
  function sync(){try{const b=document.getElementById('ns9015Banner');if(b)b.textContent='✅ '+V}catch(_){}try{document.title='요술방망이 백과사전 · NS90.298'}catch(_){}try{if(window.__NS9021_ONE_ENGINE)window.__NS9021_ONE_ENGINE.version=V}catch(_){}}
- sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,700);setInterval(sync,1600);
+ sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,700);
 })();
 </script>
 <style id="ns90206-candidate-module-style">
@@ -5061,7 +5061,7 @@ more.FR={
    try{await renderCandidates(s,panel.querySelector('.recommend-host'))}catch(e){console.error(e);const h=panel.querySelector('.hint');if(h)h.textContent='추천 후보를 불러오지 못했습니다. 직접 이름을 입력해 검색할 수 있습니다.'}
  };
  function sync(){try{const b=document.getElementById('ns9015Banner');if(b)b.textContent='✅ '+V}catch(_){}try{document.title='요술방망이 백과사전 · NS90.298'}catch(_){}try{if(window.__NS9021_ONE_ENGINE)window.__NS9021_ONE_ENGINE.version=V}catch(_){}}
- sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,700);setInterval(sync,1600);
+ sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,700);
 })();
 </script>
 <style id="ns90210-unified-candidate-style">
@@ -5113,7 +5113,7 @@ more.FR={
    return r;
  };
  function sync(){try{const b=document.getElementById('ns9015Banner');if(b)b.textContent='✅ '+V}catch(_){}try{document.title='요술방망이 백과사전 · NS90.298'}catch(_){}try{if(window.__NS9021_ONE_ENGINE)window.__NS9021_ONE_ENGINE.version=V}catch(_){}}
- sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,80);setTimeout(sync,650);setInterval(sync,1700);
+ sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,80);setTimeout(sync,650);
 })();
 </script>
 <style id="ns90211-preverified-style">
@@ -5180,7 +5180,7 @@ more.FR={
   input.addEventListener('input',run);direct.textContent='검색 진행';direct.onclick=()=>{const q=input.value.trim();if(!q)return alert('찾고 싶은 이름을 입력해 주세요.');run()};input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();direct.click()}});if(close)close.onclick=()=>panel.remove();if(input.value.trim())run();return r;
  };
  function sync(){try{const b=document.getElementById('ns9015Banner');if(b)b.textContent='✅ '+V}catch(_){}try{document.title='요술방망이 백과사전 · NS90.298'}catch(_){}try{if(window.__NS9021_ONE_ENGINE)window.__NS9021_ONE_ENGINE.version=V}catch(_){}}
- sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,80);setTimeout(sync,650);setInterval(sync,1700);
+ sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,80);setTimeout(sync,650);
 })();
 </script>
 <style id="ns90213-additem-reconnect-style">
@@ -5289,7 +5289,7 @@ more.FR={
  window.__NS90227_STRONG_ADD_SEARCH=strong;
  window.addItem=function(section,prefill=''){removeAll(section);const sec=secNode(section);if(!sec)return;const panel=document.createElement('div');panel.className='ns90213-panel';panel.innerHTML='<div class="ns90213-row"><input type="text" placeholder="직접 추가할 이름 (정확하지 않아도 됩니다)" value="'+esc(prefill||'')+'"><button type="button" class="go">검색 진행</button><button type="button" class="close">닫기</button></div><div class="ns90213-host discover"></div><div class="ns90213-host search"></div><div class="ns90213-preview"></div>';const addBtn=[...sec.querySelectorAll('.add-btn')].find(b=>String(b.getAttribute('onclick')||'').includes("addItem('"+section+"')"));(addBtn||document.getElementById(section+'List')).insertAdjacentElement('afterend',panel);const input=panel.querySelector('input'),dh=panel.querySelector('.discover'),sh=panel.querySelector('.search');discovery(section,dh,panel);let timer=0,seq=0;const run=(now=false)=>{clearTimeout(timer);const q=input.value.trim();if(!q){sh.innerHTML='';dh.style.display='';return}dh.style.display='none';const tok=String(++seq);sh.dataset.token=tok;const go=()=>search(section,q,sh,panel,tok);if(now)go();else timer=setTimeout(go,320)};input.addEventListener('input',()=>run(false));panel.querySelector('.go').onclick=()=>{if(!input.value.trim())return alert('찾고 싶은 이름을 입력해 주세요.');run(true)};input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();run(true)}});panel.querySelector('.close').onclick=()=>panel.remove();if(input.value.trim())run(true)};
  function sync(){try{const b=document.getElementById('ns9015Banner');if(b)b.textContent='✅ '+V}catch(_){}try{document.title='요술방망이 백과사전 · NS90.298'}catch(_){}try{if(window.__NS9021_ONE_ENGINE)window.__NS9021_ONE_ENGINE.version=V}catch(_){}}
- sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,80);setTimeout(sync,700);setInterval(sync,1700);
+ sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,80);setTimeout(sync,700);
 })();
 </script>
 <style id="ns90222-final-leftovers-lock-style">
@@ -5328,7 +5328,7 @@ more.FR={
    return r;
  };
  function sync(){try{const b=document.getElementById('ns9015Banner');if(b)b.textContent='✅ '+V}catch(_){}try{document.title='요술방망이 백과사전 · NS90.298'}catch(_){}try{if(window.__NS9021_ONE_ENGINE)window.__NS9021_ONE_ENGINE.version=V}catch(_){}}
- sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,800);setInterval(sync,1700);
+ sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);setTimeout(sync,100);setTimeout(sync,800);
 })();
 </script>
 <!-- NS90.250 DELETE RETURN LAVENDER
@@ -5409,8 +5409,7 @@ window.addItem=function(section,prefill=''){
  paint(section,panel,box);return r;
 };
 function sync(){try{const b=document.getElementById('ns9015Banner');if(b){b.textContent='✅ '+V;b.dataset.release='NS90.298';b.dataset.build='294-expanded-search-country-isolation'}}catch(_){}try{document.title='요술방망이 백과사전 · NS90.298'}catch(_){}try{if(window.__NS9021_ONE_ENGINE)window.__NS9021_ONE_ENGINE.version=V}catch(_){}}
-sync();addEventListener('pageshow',()=>setTimeout(sync,80));setInterval(sync,1100);
-window.__NS90289={version:V,registry,remaining,rule:'recommendation = CANDIDATES minus canonical representative registry; candidate registered before search; no READY/card/deletion dependency'};
+sync();addEventListener('pageshow',()=>setTimeout(sync,80));window.__NS90289={version:V,registry,remaining,rule:'recommendation = CANDIDATES minus canonical representative registry; candidate registered before search; no READY/card/deletion dependency'};
 })();
 </script>
 <style id="v813-food-deep-search-style">
@@ -5481,7 +5480,31 @@ function sync(){
  const auto=document.getElementById('ns90297Auto');if(auto&&!auto.dataset.v813){auto.dataset.v813='1';auto.onclick=enhancedAuto}
  const note=document.querySelector('.trial-note');if(note)note.innerHTML='<b>🍽️ 음식 전용 다단계 검색판 V8.13</b> · 자동검색은 2단계까지 넓혀 찾고, 남은 흰색 이름표를 다시 누를 때마다 3차·4차 집중검색으로 검색 범위를 더 넓힙니다.';
 }
-sync();addEventListener('pageshow',()=>setTimeout(sync,100));setInterval(sync,1200);
-window.__V813={release:RELEASE,engine:ENGINE,deepFoodResolve};
+sync();addEventListener('pageshow',()=>setTimeout(sync,100));window.__V813={release:RELEASE,engine:ENGINE,deepFoodResolve};
+})();
+</script>
+
+
+<style id="v815-stable-ui-style">
+html{overflow-anchor:auto} .rep-card-btn-v5{contain:layout style} #ns90297Progress{min-height:1.35em}
+</style>
+<script id="v815-stable-ui-owner">
+(()=>{
+'use strict';
+const RELEASE='V8.15', ENGINE='NS90.301 FOOD RESCUE STABLE UI';
+function stableSync(){
+ try{document.title='요술방망이 음식 구조변경 검색판 V8.15'}catch(_){}
+ try{const b=document.getElementById('ns9015Banner');if(b){b.textContent='✅ MASTER V28 · '+ENGINE+' · FOOD MIGRATION '+RELEASE;b.dataset.release=RELEASE;b.dataset.engine=ENGINE}}catch(_){}
+ try{const brand=document.getElementById('brand');if(brand)brand.textContent='요술방망이 음식 구조변경 검색판 V8.15'}catch(_){}
+ try{const note=document.querySelector('.trial-note');if(note)note.innerHTML='<b>🍽️ 음식 구조변경 검색판 V8.15</b> · V8.14 검색엔진은 유지하고, 검색 중 전체 화면을 주기적으로 다시 맞추던 갱신을 제거했습니다. 검색 중에는 진행문구와 해당 이름표만 바뀝니다.'}catch(_){}
+}
+// Reuse V8.14 search engine; only bind its auto-search owner once.
+function bind(){
+ stableSync();
+ try{const auto=document.getElementById('ns90297Auto');if(auto&&window.__V814_AUTO_BIND!==auto){window.__V814_AUTO_BIND=auto; /* V8.14 already owns onclick when present */}}catch(_){}
+}
+bind();
+addEventListener('pageshow',()=>setTimeout(bind,80),{passive:true});
+window.__V815={release:RELEASE,engine:ENGINE,rule:'no periodic UI repaint; row/progress-only search updates'};
 })();
 </script>
